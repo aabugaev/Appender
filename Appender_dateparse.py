@@ -2,7 +2,21 @@
 # coding: utf-8
 
 # In[11]:
+import subprocess
+import sys
 
+def install(package):
+    subprocess.call([sys.executable, "-m", "pip", "install", package])
+
+try:
+    import pandas as pd
+    import numpy as np
+    import xlrd
+
+except:
+    install('pandas')
+    install('numpy')
+    install('xlrd')
 
 import pandas as pd
 import numpy as np
